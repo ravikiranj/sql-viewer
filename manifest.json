@@ -1,0 +1,24 @@
+{
+    "name": "SQL Viewer",
+    "version": "1.0",
+    "description": "View SQL files/content formatted in the browser",
+    "permissions": [
+      "webRequest",
+      "webRequestBlocking",
+      "tabs",
+      "*://*/*.sql"
+    ],
+    "background": {
+      "scripts": ["js/background.js", "js/workerFormatter.js", "js/highlight.sql.pack.js"]
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "*://*/*.sql"
+        ],
+        "css": ["css/highlightjs/darcula.css", "css/sql-viewer-core.css"],
+        "js": ["js/jquery-3.2.1.min.js", "js/content.js"]
+      }
+    ],
+    "manifest_version": 2
+}
