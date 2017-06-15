@@ -11,9 +11,13 @@ module.exports = function(grunt) {
     },
     exec: {
       pack: {
-        command: 'google-chrome --pack-extension="sql-viewer/" --pack-extension-key="key.pem" && mv sql-viewer.crx sql-viewer.crx',
+        command: 'google-chrome --pack-extension="sql-viewer/" --pack-extension-key="key.pem"',
         stdout: true
-      }
+      },
+      zip: {
+        command: 'cd sql-viewer && zip -r sql-viewer.zip . && mv sql-viewer.zip ..',
+        stdout: true
+      } 
     },
     watch: {
       files: ['<%= jshint.files %>'],
