@@ -8,7 +8,7 @@ function fixSqlFileContentTypeHeader() {
     chrome.webRequest.onHeadersReceived.addListener(
         // callback
         function (details) {
-            if (!details.responseHeaders || !Array.isArray(details.responseHeaders)) {
+            if (details.statusCode !== 200 || !details.responseHeaders || !Array.isArray(details.responseHeaders)) {
                 return;
             }
 
@@ -22,7 +22,8 @@ function fixSqlFileContentTypeHeader() {
         },
         // filters
         {
-            urls: ["*://*/*.sql"]
+            urls: ["*://*/*.sql"],
+            types: ["main_frame"]
         },
         // extraInfoSpec
         [

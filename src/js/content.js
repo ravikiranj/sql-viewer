@@ -59,7 +59,9 @@ var sqlViewer = (function($) {
         initSelectDropdown: function() {
             $("#THEME").selectpicker({
                 style: 'btn-default',
-                size: 4
+                size: 4,
+                noneSelectedText: 'Select Theme',
+                width: 'auto'
             });
         },
 
@@ -128,12 +130,10 @@ var sqlViewer = (function($) {
             html = "<div id='" + SQL_VIEWER_ID + "' class='container-fluid'>";
             html += "<form class='form-inline sql-viewer-options'>";
             html += "<div class='form-group'>";
-            html += "<label for='THEME' class='theme-label'>Theme: ";
             html += "<select id='THEME' class='.col-md-4'>";
             html += "<option value='DEFAULT'>DEFAULT</option>";
             html += "<option value='DRACULA'>DRACULA</option>";
             html += "</select>";
-            html += "</label>";
             html += "<input type='button' value='Minify Selected' id='MINIFY' class='btn btn-default'/>";
             html += "<input type='button' value='Unminify Selected' id='UNMINIFY' class='btn btn-default'/>";
             html += "<input type='button' value='EXPLAIN Selected' id='EXPLAIN' class='btn btn-default'/>";

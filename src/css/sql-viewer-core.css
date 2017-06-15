@@ -1,3 +1,7 @@
 .sql-viewer-options .btn {
-    margin: 10px 5px 5px;
+    margin: 20px 5px 5px;
+}
+
+.sql-viewer-options .btn , .sql-viewer-options .bootstrap-select {
+    margin-right: 10px;
 }
