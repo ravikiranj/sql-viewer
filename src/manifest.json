@@ -1,6 +1,6 @@
 {
     "name": "SQL Viewer",
-    "version": "1.0",
+    "version": "1.0.0",
     "description": "View SQL files/content formatted in the browser",
     "permissions": [
       "webRequest",
@@ -8,6 +8,12 @@
       "storage",
       "*://*/*.sql"
     ],
+    "icons": {
+      "16": "icons/sql-viewer-16x16.png",
+      "32": "icons/sql-viewer-32x32.png",
+      "64": "icons/sql-viewer-64x64.png",
+      "128": "icons/sql-viewer-128x128.png"
+    },
     "background": {
       "scripts": ["js/background.js"]
     },
