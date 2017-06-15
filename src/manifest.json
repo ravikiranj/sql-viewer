@@ -9,15 +9,23 @@
       "*://*/*.sql"
     ],
     "background": {
-      "scripts": ["js/background.js", "js/workerFormatter.js", "js/highlight.sql.pack.js"]
+      "scripts": ["js/background.js"]
     },
     "content_scripts": [
       {
         "matches": [
           "*://*/*.sql"
         ],
-        "css": ["css/highlightjs/darcula.css", "css/sql-viewer-core.css"],
-        "js": ["js/jquery-3.2.1.min.js", "js/content.js"]
+        "css": [
+          "css/codemirror/codemirror.css"
+        ],
+        "js": [
+          "js/jquery-3.2.1.min.js",
+          "js/codemirror/lib/codemirror.js",
+          "js/codemirror/mode/sql.js",
+          "js/sql-formatter/sql-formatter-1.2.2.min.js",
+          "js/content.js"
+        ]
       }
     ],
     "manifest_version": 2
