@@ -9,6 +9,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    exec: {
+      pack: {
+        command: 'google-chrome --pack-extension="src/" --pack-extension-key="key.pem" && mv src.crx sql-viewer.crx',
+        stdout: true
+      }
+    },
     watch: {
       files: ['<%= jshint.files %>'],
       tasks: ['jshint']
@@ -16,6 +22,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-exec');
   grunt.registerTask('default', ['jshint']);
 
 };
