@@ -103,18 +103,18 @@ var sqlViewer = (function($) {
 
         retrieveAndUpdateTheme: function() {
             chrome.storage.sync.get(["theme"], function(items) {
-                if (!items || !items["theme"] || $.inArray(items["theme"], themes) === -1) {
+                if (!items || !items.theme || $.inArray(items.theme, themes) === -1) {
                     $("#THEME").val(defaultTheme);
                     $("#THEME").selectpicker("refresh");
                     return;
                 }
 
-                $("#THEME").val(items["theme"]);
+                $("#THEME").val(items.theme);
                 $("#THEME").selectpicker("refresh");
                 if (codeMirror) {
-                    codeMirror.setOption("theme", items["theme"]);
+                    codeMirror.setOption("theme", items.theme);
                 }
-                console.log("SQL-Viewer retrieved theme preference = ", items["theme"]);
+                console.log("SQL-Viewer retrieved theme preference = ", items.theme);
             });
         },
 
