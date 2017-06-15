@@ -5,7 +5,7 @@
     "permissions": [
       "webRequest",
       "webRequestBlocking",
-      "tabs",
+      "storage",
       "*://*/*.sql"
     ],
     "background": {
@@ -17,13 +17,20 @@
           "*://*/*.sql"
         ],
         "css": [
-          "css/codemirror/codemirror.css"
+          "css/bootstrap/bootstrap.min.css",
+          "css/bootstrap/bootstrap-select.min.css",
+          "css/codemirror/codemirror.css",
+          "css/codemirror/dracula.css",
+          "css/sql-viewer-core.css"
         ],
         "js": [
           "js/jquery-3.2.1.min.js",
+          "js/bootstrap.min.js",
+          "js/bootstrap-select.min.js",
+          "js/sql-formatter/sql-formatter-1.2.2.min.js",
           "js/codemirror/lib/codemirror.js",
           "js/codemirror/mode/sql.js",
-          "js/sql-formatter/sql-formatter-1.2.2.min.js",
+          "js/codemirror/addon/formatting.js",
           "js/content.js"
         ]
       }
