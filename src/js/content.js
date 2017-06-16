@@ -5,8 +5,8 @@ var sqlViewer = (function($) {
         codeMirror,
         sqlMode = "text/x-sql",
         SQL_VIEWER_ID = "SQL-VIEWER",
-        defaultTheme = "DEFAULT",
-        themes = [defaultTheme, "DRACULA"]
+        defaultTheme = "DRACULA",
+        themes = ["DEFAULT", "DRACULA"]
     ;
 
     // Public
@@ -48,7 +48,7 @@ var sqlViewer = (function($) {
             codeMirror.explainRange(isExplain, range.from, range.to);
         },
 
-        minifyOrUnminifyRange: function(isMinify) {
+        minifyOrPrettifyRange: function(isMinify) {
             if (!codeMirror) {
                 return;
             }
@@ -76,11 +76,11 @@ var sqlViewer = (function($) {
             });
 
             $("#MINIFY").click(function() {
-                self.minifyOrUnminifyRange(true);
+                self.minifyOrPrettifyRange(true);
             });
 
-            $("#UNMINIFY").click(function() {
-                self.minifyOrUnminifyRange(false);
+            $("#PRETTIFY").click(function() {
+                self.minifyOrPrettifyRange(false);
             });
 
             $("#THEME").change(function() {
@@ -135,10 +135,10 @@ var sqlViewer = (function($) {
             html += "<option value='DRACULA'>DRACULA</option>";
             html += "</select>";
             html += "<input type='button' value='Minify Selected' id='MINIFY' class='btn btn-default'/>";
-            html += "<input type='button' value='Unminify Selected' id='UNMINIFY' class='btn btn-default'/>";
+            html += "<input type='button' value='Prettify Selected' id='PRETTIFY' class='btn btn-default'/>";
             html += "<input type='button' value='EXPLAIN Selected' id='EXPLAIN' class='btn btn-default'/>";
             html += "<input type='button' value='UNEXPLAIN Selected' id='UNEXPLAIN' class='btn btn-default'/>";
-            html += "<input type='button' value='Ctrl+S to save raw sql' id='TIP' class='btn btn-default'>";
+            html += "<input type='button' value='Ctrl+S/Cmd+S to save raw sql' id='TIP' class='btn btn-default'>";
             html += "<span class='label label-info'>INFO</span>";
             html += "</input>";
             html += "</div>";
@@ -156,6 +156,7 @@ var sqlViewer = (function($) {
                 lineNumbers: true,
                 readOnly: true,
                 foldGutter: true,
+                theme: defaultTheme,
                 gutters: ["CodeMirror-foldgutter"]
             });
             codeMirror.setSize("100%", "100%");
