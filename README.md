@@ -7,7 +7,7 @@ SQL Viewer Chrome extension
 * Run `grunt`
 
 ## Dev Deployment
-* Open Chrome and hit `chrome://extensions`
+* Open `chrome://extensions` in Google Chrome
 * Load unpackaged extensions and point to `src/` folder
 
 ## Production

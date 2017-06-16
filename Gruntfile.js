@@ -2,7 +2,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     jshint: {
-      files: ['Gruntfile.js', 'sql-viewer/js/background.js', 'sql-viewer/js/content.js'],
+      files: ['Gruntfile.js', 'src/js/background.js', 'src/js/content.js'],
       options: {
         globals: {
           jQuery: true
@@ -11,12 +11,14 @@ module.exports = function(grunt) {
     },
     exec: {
       pack: {
-        command: 'google-chrome --pack-extension="sql-viewer/" --pack-extension-key="key.pem"',
-        stdout: true
+        command: 'google-chrome --pack-extension="src/" --pack-extension-key="key.pem" && mv src.crx sql-viwer.crx',
+        stdout: true,
+        stderr: true
       },
       zip: {
-        command: 'cd sql-viewer && zip -r sql-viewer.zip . && mv sql-viewer.zip ..',
-        stdout: true
+        command: 'cd src && zip -r sql-viewer.zip . && mv sql-viewer.zip ..',
+        stdout: true,
+        stderr: true
       } 
     },
     watch: {
