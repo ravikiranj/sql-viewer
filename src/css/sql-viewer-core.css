@@ -2,6 +2,18 @@
     margin: 20px 5px 5px;
 }
 
+.sql-viewer-options #TIP {
+    margin-right: 2px;
+    border: none;
+    background-color: #eee;
+    cursor: default;
+      font-weight: bold;
+}
+
+#TIP:focus {
+    outline: none;
+}
+
 .sql-viewer-options .btn , .sql-viewer-options .bootstrap-select {
     margin-right: 10px;
 }

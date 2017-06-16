@@ -2,7 +2,7 @@
   "name": "SQL Viewer",
   "short_name": "SQL Viewer",
   "manifest_version": 2,
-  "version": "1.0.0",
+  "version": "1.0.1",
 
   "description": "View SQL files/content formatted in the browser",
   "icons": {

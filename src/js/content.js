@@ -138,6 +138,9 @@ var sqlViewer = (function($) {
             html += "<input type='button' value='Unminify Selected' id='UNMINIFY' class='btn btn-default'/>";
             html += "<input type='button' value='EXPLAIN Selected' id='EXPLAIN' class='btn btn-default'/>";
             html += "<input type='button' value='UNEXPLAIN Selected' id='UNEXPLAIN' class='btn btn-default'/>";
+            html += "<input type='button' value='Ctrl+S to save raw sql' id='TIP' class='btn btn-default'>";
+            html += "<span class='label label-info'>INFO</span>";
+            html += "</input>";
             html += "</div>";
             html += "</form>";
             html += "</div>";
